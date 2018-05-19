@@ -7,6 +7,8 @@ package Logica;
 public class Depredador extends Thread {
     private double tasaReproduccion;
     private double tiempoBusquedaAlimento;
+    private int posX;
+    private int posY;
     /**
      * Obtiene el tasa de reproduccion
      * @return tasa de reproduccion del depredador
@@ -47,4 +49,23 @@ public class Depredador extends Thread {
             movimiento();
         }
     }
+
+    public int getPosX() {
+        return posX;
+    }
+
+    public void setPosX(int posX) {
+        this.posX = posX;
+    }
+
+    public int getPosY() {
+        return posY;
+    }
+
+    public void setPosY(int posY) {
+        this.posY = posY;
+    }
+    
+    
+    
 }
