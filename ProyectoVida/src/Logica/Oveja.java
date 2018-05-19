@@ -1,8 +1,8 @@
 package Logica;
 
 /**
- * abstraccion general para contruir ovejas
- * @author Michael Steven Palacios
+ * abstraccion general para contruir ovejas 
+ * @author Michael Steven Palacios 201356132
  */
 public abstract class Oveja extends Thread {
     protected String tipo;
@@ -10,7 +10,11 @@ public abstract class Oveja extends Thread {
     protected double tiempoBusquedaAlimento;
     protected int posX;
     protected int posY;
-
+    
+    /**
+     * Identifica al tipo de oveja a utilizar 
+     * @return tipo de oveja
+     */
     public String getTipo() {
         return tipo;
     }
@@ -22,17 +26,31 @@ public abstract class Oveja extends Thread {
     public double getTiempoBusquedaAlimento() {
         return tiempoBusquedaAlimento;
     }
-
+    
+    /**
+     * Sirve para consultar coordenadas de la oveja
+     * @return Posicion X actual
+     */
     public int getPosX() {
         return posX;
     }
-
+    /**
+     * Sirve para consultar coordenadas de la oveja
+     * @return Posicion Y actual
+     */
     public int getPosY() {
         return posY;
     }
 
-    /*
-    Recordar que para implementar el movimiento, se indican posiciones en X y Y
-    */
+    /**
+     * Edita los valores de las coordenadas X y Y,
+     */
     public abstract void movimiento();
+    
+    @Override
+    public void run(){
+        while(true){
+            movimiento();
+        }
+    }
 }
